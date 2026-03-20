@@ -9,7 +9,8 @@
     <script src="https://kit.fontawesome.com/b0c77242ce.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 class="text-center">Seguro a casa</h1>
+    <h1 class="text-center">SEGURO A CASA</h1>
+
     <div class="container-fluid row">
     <!-- Formulario de registro -->
     <form class="col-4 p-3" method="POST">
@@ -17,6 +18,7 @@
         <?php
             include "../modelo/conexion.php";
             include "../controlador/registro_persona.php";
+            include "../controlador/eliminar_persona.php";
             ?>
         <div class="mb-3">
             <label for="exampleInputName" class="form-label">Nombre de la persona</label>
@@ -86,9 +88,9 @@
                     <!-- ================= BOTONES DE ACCIÓN ================= -->
                     <td>
                         <!-- Editar -->
-                        <a href="" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="modificar.php?id=<?= $datos->id ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                         <!-- Eliminar -->
-                        <a href="" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                        <a href="../admin/panel.php?id=<?= $datos->id ?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                     </td>
                 </tr>
                 <?php } 
